@@ -54,6 +54,4 @@ Here is the chart for **question 4**
 
 ## APPENDIX A (PYTHON SCRIPT)
 
-```python
-
-```
+*  My code can be found on github [here](https://github.com/jacobpad/CSE250/blob/main/week02/week2.ipynb).
