@@ -118,7 +118,12 @@ f.close()
 
 ## APPENDIX A (Github)
 
-* 
+* [Project2.py](https://github.com/jacobpad/CSE250/blob/main/week04/Project2.py)
+* [Project2.ipynb](https://github.com/jacobpad/CSE250/blob/main/week04/Project2.ipynb) The easier to read version.
+* [total_delayed_to_weather.png](https://github.com/jacobpad/CSE250/blob/main/week04/total_delayed_to_weather.png)
+* [total_delays_per_month_chart.png](https://github.com/jacobpad/CSE250/blob/main/week04/total_delays_per_month_chart.png)
+* The `.md` file [cse250_project2_Jacob_Padgett.md](https://github.com/jacobpad/CSE250/blob/main/week05/cse250_project2_Jacob_Padgett.md)
+* The `.md` file as PDF 
 
 ---
 
