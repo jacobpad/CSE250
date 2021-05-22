@@ -7,10 +7,10 @@ To work with JSON files that include missing data. The data is about airports an
 ## TECHNICAL DETAILS
 
 This chart is part of **question 2**
-![](/week04/total_delays_per_month_chart.png)
+![](https://raw.githubusercontent.com/jacobpad/CSE250/main/week04/total_delays_per_month_chart.png)
 
 This chart is part of **question 4**
-![](/week04/total_delayed_to_weather.png)
+![](https://raw.githubusercontent.com/jacobpad/CSE250/main/week04/total_delayed_to_weather.png)
 
 [Here is a video](https://youtu.be/Rc-O55r9LKA) explaining my reasoning and logic behind how I chose to fill in the missing data for **question 2**.
 
@@ -123,7 +123,7 @@ f.close()
 * [total_delayed_to_weather.png](https://github.com/jacobpad/CSE250/blob/main/week04/total_delayed_to_weather.png)
 * [total_delays_per_month_chart.png](https://github.com/jacobpad/CSE250/blob/main/week04/total_delays_per_month_chart.png)
 * The `.md` file [cse250_project2_Jacob_Padgett.md](https://github.com/jacobpad/CSE250/blob/main/week05/cse250_project2_Jacob_Padgett.md)
-* The `.md` file as PDF 
+* The `.md` file as PDF [cse250_project2_Jacob_Padgett.md - Grip.pdf](https://github.com/jacobpad/CSE250/blob/main/week05/cse250_project2_Jacob_Padgett.md%20-%20Grip.pdf)
 
 ---
 
