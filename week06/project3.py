@@ -3,6 +3,8 @@ import datadotworld as dw
 import pandas as pd
 import altair as alt
 
+# import sys
+# !{sys.executable} -m pip install tabulate
 # %%
 # Grand Question 1
 # 
@@ -26,6 +28,7 @@ result = dw.query('byuidss/cse-250-baseball-database',
     ''')
 
 gq1 = result.dataframe
+print(gq1.head(3).to_markdown())
 gq1
 
 # %%
@@ -57,6 +60,7 @@ result = dw.query('byuidss/cse-250-baseball-database',
     ''')
 
 gq2a = result.dataframe
+print(gq2a.head(3).to_markdown())
 gq2a
 
 # %%
@@ -77,6 +81,7 @@ result = dw.query('byuidss/cse-250-baseball-database',
     ''')
 
 gq2b = result.dataframe
+print(gq2b.head(3).to_markdown())
 gq2b
 
 # %%
@@ -85,33 +90,62 @@ gq2b
 
 result = dw.query('byuidss/cse-250-baseball-database', 
     '''
-    SELECT 
-    playerid
-    , SUM(h) as hits
-    , SUM(ab) as at_bats
-    , h/ab AS batting_average
-    FROM batting
-    WHERE ab > 100
-    GROUP BY playerid
-    ORDER BY batting_average DESC
+    SELECT p.namefirst, p.namelast, SUM(b.h) as hits, SUM(b.ab) AS at_bat, SUM(b.h)/SUM(b.ab) AS bat_avg
+    FROM people p
+    JOIN batting b ON p.playerid = b.playerid
+    WHERE b.ab > 100
+    GROUP BY p.playerid
+    ORDER BY bat_avg DESC
     LIMIT 5
-    ; 
-    
-    # SELECT  playerid, 
-    #     h AS hits, 
-    #     ab AS at_bat, 
-    #     h/ab AS batting_average
-    # FROM batting
-    # WHERE ab > 300
-    # GROUP BY playerid
-    # ORDER BY batting_average DESC
-    # -- ORDER BY at_bat DESC
-    # LIMIT 5;
+    ;    
+   ''')
+
+gq2c = result.dataframe
+print(gq2c.head(3).to_markdown())
+gq2c
+
+# %%
+# Grand Question 3
+# 
+# Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc.). Write an SQL query to get the data you need. Use Python if additional data wrangling is needed, then make a graph in Altair to visualize the comparison. Provide the visualization and its description.
+
+result = dw.query('byuidss/cse-250-baseball-database', 
+    '''
+    -- At Bat vs Triples with Runs Scored
+
+    SELECT    f.franchname AS Team
+            , t.teamid
+            , t.ab AS at_bat
+            , t.2b AS doubles
+            , t.r AS runs_scored
+            , t.2b/t.ab AS doubles_by_at_bat
+            , t.r/t.2b AS runs_per_double
+    FROM teams t
+    JOIN teamsfranchises f ON t.franchid = f.franchid
+    WHERE f.active = "Y" AND t.teamid = "ARI" OR t.teamid = "SDN"
+    GROUP BY f.franchname
+    ORDER BY runs_scored DESC
+    ;
+   ''')
+
+gq3 = result.dataframe
+print(gq3.head(3).to_markdown())
+gq3
+
+# %%
+# 
+# Diamondbacks score more runs from doubles than Padres
+
+# Chart
+gq3_chart = (
+    alt.Chart(gq3)
+    .encode(x="Team", y="runs_per_double")
+    .mark_bar()
+    .properties(width=400, title="Diaondbacks Score More Runs Than Padres From Doubles")
+)
 
 
-    
-       ''')
+gq3_chart.save('gq3_chart.png')
+gq3_chart
 
-gq2b = result.dataframe
-gq2b
-
+# %%
