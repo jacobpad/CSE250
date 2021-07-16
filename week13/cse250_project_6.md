@@ -8,13 +8,23 @@ The school is asking for my résumé. They wanted to be joined with other studen
 
 - Join the BYUI Data Science Resumes GitHub organization and use the template repository to make a resume repository under your repositories. A good name might be LASTNAME-Resume.
 
-![]()
+Here you can see that I joined the BYUI Data Science Resumes GitHub organization.
+
+![](https://raw.githubusercontent.com/jacobpad/CSE250/main/week13/gq1.png)
+
+---
 
 ## GRAND QUESTION 2
 
 - Clone your repository to your computer and build a first draft of your resume.
 
-![]()
+Here I cloned the repository to my computer.
+
+![](https://raw.githubusercontent.com/jacobpad/CSE250/main/week13/gq2.png)
+
+And here I build a first draft of my resume.
+
+
 
 ## GRAND QUESTION 3
 
